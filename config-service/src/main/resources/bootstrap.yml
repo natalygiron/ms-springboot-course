@@ -3,14 +3,16 @@ server:
   port: 8081
 
 spring:
+  profiles:
+    active: git
   cloud:
     config:
       server:
         git:
-          url:
           searchPaths: config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
+          uri: https://github.com/natalygiron/ms-springboot-course.git
   security:
     user:
       name: root
